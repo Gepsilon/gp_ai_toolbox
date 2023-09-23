@@ -1,0 +1,18 @@
+[submodule "YOLOv6"]
+	path = YOLOv6
+	url = https://github.com/meituan/YOLOv6
+[submodule "GroundingDINO"]
+	path = GroundingDINO
+	url = https://github.com/IDEA-Research/GroundingDINO
+[submodule "YOLOX"]
+	path = YOLOX
+	url = https://github.com/Megvii-BaseDetection/YOLOX
+[submodule "yolov7"]
+	path = yolov7
+	url = https://github.com/WongKinYiu/yolov7
+[submodule "yolor"]
+	path = yolor
+	url = https://github.com/WongKinYiu/yolor
+[submodule "yolov5"]
+	path = yolov5
+	url = https://github.com/ultralytics/yolov5
