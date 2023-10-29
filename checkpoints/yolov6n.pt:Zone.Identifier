@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://github.com/meituan/YOLOv6
+HostUrl=https://objects.githubusercontent.com/github-production-release-asset-2e65be/501076075/ed7ab763-6657-4965-8a79-9a1cb0065ab3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231026%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231026T230518Z&X-Amz-Expires=300&X-Amz-Signature=a44bdef1520eab3648c4afdb6b61cf936760927ea8da6a1d4a221d6a4c10b84f&X-Amz-SignedHeaders=host&actor_id=607068&key_id=0&repo_id=501076075&response-content-disposition=attachment%3B%20filename%3Dyolov6n.pt&response-content-type=application%2Foctet-stream
