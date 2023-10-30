@@ -1,4 +1,0 @@
-[ZoneTransfer]
-ZoneId=3
-ReferrerUrl=https://github.com/WongKinYiu/yolov7
-HostUrl=https://objects.githubusercontent.com/github-production-release-asset-2e65be/511187726/b0243edf-9fb0-4337-95e1-42555f1b37cf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231026%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231026T224718Z&X-Amz-Expires=300&X-Amz-Signature=c6c3e11a38cfdfb2ccfe434f1ae96c9f50c7af133a1b233e67feb54d348a25f1&X-Amz-SignedHeaders=host&actor_id=607068&key_id=0&repo_id=511187726&response-content-disposition=attachment%3B%20filename%3Dyolov7.pt&response-content-type=application%2Foctet-stream
