@@ -1,6 +1,5 @@
 import argparse
 from os import path
-
 from gp_detection.model_repository import ModelRepository
 from gp_detection.models.detection_output import LocalImageSource
 from gp_models.gepsilon_yolo_v5 import GepsilonYoloV5
@@ -18,27 +17,28 @@ def create_model_repository():
     return model_resolver
 
 
-def main(opt):
-    print(opt)
-    repository = create_model_repository()
+def main(weights, source, model):
+    if True:
+        repository = create_model_repository()
+        gepsilon_model = repository.resolve(model)
+        output = gepsilon_model.predict(LocalImageSource(path.abspath(source)), {
+            'weights': path.abspath(f'../checkpoints/{weights}')
+        })
+        output.show()
+        return output
 
-    gepsilon_model = repository.resolve('yolo_v5')
-    output = gepsilon_model.predict(LocalImageSource(path.abspath('../tests/data_sets/image3.jpg')), {
-        'weights': path.abspath('../checkpoints/yolov5n.pt')
-    })
 
-    print(output)
-    output.show()
-    return output
+def parser():
+    parser = argparse.ArgumentParser()
+    #  parser.add_argument('--mode', type=str, default='predict', help='')
+    parser.add_argument('--weights', nargs='+', type=str, default='yolov7.pt', help='')
+    parser.add_argument('--source', type=str, default='gettyimages-1214430325.jpg', help='')
+    parser.add_argument('--model', type=str, default='yolo_v7', help='')
+    opt = parser.parse_args()
+    return opt
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    # TODO: define cli args and use them
-    # suggestion of the CLI: cli.py --mode=predict --model=yolo_v8 --source='.....' --weights=...
-    # parser.add_argument('--weights', nargs='+', type=str, default='yolov5s.pt', help='model path or triton URL')
-    # parser.add_argument('--source', type=str, default='data/images', help='file/dir/URL/glob/screen/0(webcam)')
-    # parser.add_argument('--model', type=str, default='yolo_v8', help='file/dir/URL/glob/screen/0(webcam)')
-    opt = parser.parse_args()
+    opt = parser()
+    main(**vars(opt))
 
-    main(opt)

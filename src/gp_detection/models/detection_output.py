@@ -2,6 +2,8 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from itertools import groupby
 from typing import List
+import SimpleITK as sitk
+import cv2 as cv
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -34,6 +36,7 @@ class Box:
     y: float
     h: float
     w: float
+
 
     @staticmethod
     def from_xyxy(xyxy: List[float]):
@@ -89,8 +92,11 @@ class DetectionOutput:
                     clip_box=ax.clipbox,
                     clip_on=True,
                 )
+        plt.interactive(True)
+        plt.show()
 
-            plt.interactive(True)
-            plt.show()
 
-# gepsilon.detection_model('yolo_v8').train().eval().detect()
+
+
+
+
