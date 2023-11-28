@@ -1,5 +1,5 @@
 .idea
 venv
-__pycashe__
+*__pycache__
 
 
