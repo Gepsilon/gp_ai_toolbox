@@ -2,13 +2,13 @@ import unittest
 from os import path
 from unittest.mock import MagicMock
 
-from src.detection.exceptions import UnknownModel
-from src.detection.model_repository import ModelRepository
-from src.detection.models.detection_output import DetectionOutput, LocalImageSource
-from src.gepsilon_models.gepsilon_yolo_v5 import GepsilonYoloV5
-from src.gepsilon_models.gepsilon_yolo_v6 import GepsilonYoloV6
-from src.gepsilon_models.gepsilon_yolo_v7 import GepsilonYoloV7
-from src.gepsilon_models.gepsilon_yolo_v8 import GepsilonYoloV8
+from src.gp_detection.exceptions import UnknownModel
+from src.gp_detection.model_repository import ModelRepository
+from src.gp_detection.models.detection_output import DetectionOutput, LocalImageSource
+from src.gp_models.gepsilon_yolo_v5 import GepsilonYoloV5
+from src.gp_models.gepsilon_yolo_v6 import GepsilonYoloV6
+from src.gp_models.gepsilon_yolo_v7 import GepsilonYoloV7
+from src.gp_models.gepsilon_yolo_v8 import GepsilonYoloV8
 
 MOCK_MODEL_NAME = 'MOCK_MODEL_NAME'
 UNKNOWN_MODEL_NAME = 'UNKNOWN_MODEL_NAME'
@@ -56,6 +56,7 @@ class TestObjectDetection(unittest.TestCase):
         output = gepsilon_model.predict(LocalImageSource(TEST_IMAGE), {
             'weights': path.abspath('../checkpoints/yolov5n.pt')
         })
+        print(output.detections)
 
         self.assertEqual(2, len(output.detections))
 
