@@ -18,14 +18,13 @@ def create_model_repository():
 
 
 def main(weights, source, model):
-    if True:
-        repository = create_model_repository()
-        gepsilon_model = repository.resolve(model)
-        output = gepsilon_model.predict(LocalImageSource(path.abspath(source)), {
-            'weights': path.abspath(f'../checkpoints/{weights}')
-        })
-        output.show()
-        return output
+    repository = create_model_repository()
+    gepsilon_model = repository.resolve(model)
+    output = gepsilon_model.predict(LocalImageSource(path.abspath(source)), {
+        'weights': path.abspath(f'../checkpoints/{weights}')
+    })
+    output.show()
+    return output
 
 
 def parser():
